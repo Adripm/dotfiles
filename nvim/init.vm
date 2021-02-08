@@ -1,0 +1,127 @@
+"## Basic Vim commands ##
+":set guifont=Fira_Code"
+:set number
+:set relativenumber
+:set incsearch
+:set hlsearch
+:set smartindent
+:set smarttab
+:set tabstop=4
+:set shiftwidth=4
+:set ignorecase
+:set smartcase
+:set laststatus=2
+:syntax on
+
+"## Custom Keybindings ##
+"+-------------------------------------+
+"## Buffer navigation ##
+" Control + Keys  -> Move between buffers
+:noremap <C-J> <C-W><C-J>
+:noremap <C-K> <C-W><C-K>
+:noremap <C-H> <C-W><C-H>
+:noremap <C-L> <C-W><C-L>
+
+"## Tab navigation ##
+" Control-N and Control-M  -> Move between tabs
+:noremap <C-N> gT
+:noremap <C-M> gt
+
+"## Page navigation ##
+" Alt-J and Alt-K  -> Move page up and down
+:noremap <M-j> 2<C-E>
+:noremap <M-k> 2<C-Y>
+
+"## Other ##
+
+" u: undo
+"'U: redo
+:noremap <S-U> <C-R>
+
+" Vim commands
+:noremap . :
+
+"## NERDTree ##
+:noremap <M-q> :NERDTreeToggle<CR>
+"+-------------------------------------+
+
+"## VimPlug ##
+call plug#begin()
+
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'joshdick/onedark.vim'
+	Plug 'preservim/nerdTree'
+	Plug 'sheerun/vim-polyglot'
+	Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+"## Themes ##
+:let g:onedark_termcolors=256
+"## Truecolor support ##
+if (has("termguicolors"))
+	set termguicolors	
+endif
+:let g:airline_theme='onedark'
+:colorscheme onedark
+
+"## Opacity ##
+highlight Normal		ctermbg=NONE guibg=NONE
+highlight LineNr		ctermbg=NONE guibg=NONE
+highlight SignColumn	ctermbg=NONE guibg=NONE
+
+"## Airline Customization ##
+:let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+"## Tabline ##
+let g:airline#extensions#tabline#enabled = 1
+" --> For straight tabline separators
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+"## Special Characters ##
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_left_sep = '' "
+let g:airline_left_alt_sep = '' "
+let g:airline_right_sep = '' "
+let g:airline_right_alt_sep = '' "
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+"## Status line ##
+
+"let g:airline_section_b = '%{strftime("%c")}'
+"let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_y = '' " Disable encoding section
+let g:airline_section_z = '' " Disable file position section
+let g:airline_section_warning = '' " Disable warning section 
+let g:airline_inactive_collapse = 1 " Collapse inactive windows left status bar
+let g:airline_skip_empty_sections = 1 " Do not draw separators for empty sections
+
+let airline#extensions#tabline#show_close_button = 0
+let airline#extensions#tabline#tabs_label = ''
+let airline#extensions#tabline#buffers_label = ''
+let airline#extensions#tabline#fnamemod = ':t'
+let airline#extensions#tabline#show_tab_count = 0
+let airline#extensions#tabline#show_buffers = 0
+let airline#extensions#tabline#show_splits = 0
+let airline#extensions#tabline#tab_min_count = 2
+let airline#extensions#tabline#show_tab_nr = 0
+let airline#extensions#tabline#show_tab_type = 0
