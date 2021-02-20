@@ -1,5 +1,5 @@
 "## Basic Vim commands ##
-":set guifont=Fira_Code"
+":set nocompatible
 :set number
 :set relativenumber
 :set incsearch
@@ -11,6 +11,7 @@
 :set ignorecase
 :set smartcase
 :set laststatus=2
+:set list
 :syntax on
 
 "## Custom Keybindings ##
@@ -29,8 +30,8 @@
 
 "## Page navigation ##
 " Alt-J and Alt-K  -> Move page up and down
-:noremap <M-j> 2<C-E>
-:noremap <M-k> 2<C-Y>
+:noremap <S-j> 3<C-E>
+:noremap <S-k> 3<C-Y>
 
 "## Other ##
 
@@ -45,6 +46,9 @@
 :noremap <M-q> :NERDTreeToggle<CR>
 "+-------------------------------------+
 
+" ## Polyglot plugin settings - Syntax highlighter ##
+let g:polyglot_disabled = ['autoindent']
+
 "## VimPlug ##
 call plug#begin()
 
@@ -54,10 +58,12 @@ call plug#begin()
 	Plug 'preservim/nerdTree'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'tpope/vim-fugitive'
+	Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
 "## Themes ##
+":set guifont=Fira_Code"
 :let g:onedark_termcolors=256
 "## Truecolor support ##
 if (has("termguicolors"))
