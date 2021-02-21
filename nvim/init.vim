@@ -12,6 +12,7 @@ set ignorecase
 set smartcase
 set laststatus=2
 set nolist
+set nowrap
 syntax on
 
 "## Custom Keybindings ##
