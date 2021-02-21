@@ -2,19 +2,22 @@
 window:
     padding:
         x: 4
-        y: 0 
+        y: 0
 
 #background_opacity: 0.92
 
 # Fonts
 font:
     normal:
-        family: 'Fira Code' 
+        family: 'Fira Code'
         style: Regular
     bold:
         family: 'Fira Code'
         style: Bold
-    size: 12 
+    italic:
+        family: 'Fira Code'
+        style: Italic
+    size: 12
 
 # Colorscheme: onedark
 colors:
@@ -32,8 +35,8 @@ colors:
         magenta: '0xc678dd'
         cyan:    '0x56b6c2'
         white:   '0x828791'
-                 
-    bright:      
+
+    bright:
         black:   '0x5c6370'
         red:     '0xe06c75'
         green:   '0x98c379'
@@ -42,8 +45,8 @@ colors:
         magenta: '0xc678dd'
         cyan:    '0x56b6c2'
         white:   '0xe6efff'
-                 
-    dim:         
+
+    dim:
         black:   '0x1e2127'
         red:     '0xe06c75'
         green:   '0x98c379'
