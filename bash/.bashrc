@@ -121,6 +121,21 @@ fi
 # --------------------
 # Custom configuration
 
+# Prompt configuration
+# Prompt: [00:00] dir >>
 
-# PS1="\[\e[1;93m\]>> \[\e[0m\]"
-export PS1="\[\e[31;40m\][\[\e[m\]\[\e[31;40m\]\A\[\e[m\]\[\e[31;40m\]]\[\e[m\] \W \[\e[31m\]>>\[\e[m\] "
+# Pick random color on bash init
+# Open tag:  \[\e[xx;xxm\]
+# Close tag: \[\e[\m]
+
+colors[0]="\[\e[31;40m\]"
+colors[1]="\[\e[32;40m\]"
+colors[2]="\[\e[34;40m\]"
+endcolor="\[\e[m\]"
+bold="$(tput bold)"
+normal="$(tput sgr0)"
+
+export promptcolor="${colors[$RANDOM%3]}"
+
+export PS1="$bold$promptcolor[\A]$endcolor$normal \W $bold$promptcolor>>$endcolor$normal "
+
