@@ -115,3 +115,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+# Default file
+# --------------------
+# Custom configuration
+
+
+# PS1="\[\e[1;93m\]>> \[\e[0m\]"
+export PS1="\[\e[33;40m\][\[\e[m\]\[\e[33;40m\]\A\[\e[m\]\[\e[33;40m\]]\[\e[m\] \W \[\e[33m\]>>\[\e[m\] "
