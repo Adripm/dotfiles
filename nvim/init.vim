@@ -60,7 +60,6 @@ call plug#begin()
 	Plug 'sheerun/vim-polyglot'
 	Plug 'tpope/vim-fugitive'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'ghifarit53/tokyonight-vim'
 
 call plug#end()
 

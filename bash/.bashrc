@@ -124,10 +124,6 @@ fi
 # Prompt configuration
 # Prompt: [00:00] dir >>
 
-# Pick random color on bash init
-# Open tag:  \[\e[xx;xxm\]
-# Close tag: \[\e[\m]
-
 colors[0]="\e[31m"
 colors[1]="\e[35m"
 colors[2]="\e[34m"
@@ -135,7 +131,18 @@ endcolor="\e[39m"
 bold="\e[1m"
 normal="\e[0m"
 
+# Pick random color on bash init
 export promptcolor="${colors[$RANDOM%3]}"
 
-export PS1="$bold$promptcolor[\A]$endcolor$normal \W $bold$promptcolor>>$endcolor$normal "
+# Get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == ""  ]
+	then
+		echo "(${BRANCH}) "
+	else
+		echo ""
+	fi
+}
 
+export PS1="$bold$promptcolor[\A]$endcolor$normal \W \`parse_git_branch\`$bold$promptcolor>>$endcolor$normal "
