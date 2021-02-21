@@ -128,12 +128,12 @@ fi
 # Open tag:  \[\e[xx;xxm\]
 # Close tag: \[\e[\m]
 
-colors[0]="\[\e[31;40m\]"
-colors[1]="\[\e[32;40m\]"
-colors[2]="\[\e[34;40m\]"
-endcolor="\[\e[m\]"
-bold="$(tput bold)"
-normal="$(tput sgr0)"
+colors[0]="\e[31m"
+colors[1]="\e[35m"
+colors[2]="\e[34m"
+endcolor="\e[39m"
+bold="\e[1m"
+normal="\e[0m"
 
 export promptcolor="${colors[$RANDOM%3]}"
 
