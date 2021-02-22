@@ -145,4 +145,4 @@ function parse_git_branch() {
 	fi
 }
 
-export PS1="$bold$promptcolor[\A]$endcolor$normal \W \`parse_git_branch\`$bold$promptcolor>>$endcolor$normal "
+export PS1="\[$bold$promptcolor\][\A]\[$endcolor$normal\] \W \`parse_git_branch\`\[$bold$promptcolor\]>>\[$endcolor$normal\] "
